@@ -22,10 +22,12 @@ var p = Promise.race([
 
   const data$ = Observable.create(observer => {
     fetch("https://randomuser.me/api")
-      .then(response => response.json()) // or text() or blob() etc.
+      .then(response => response.json())
       .then(data => {
         observer.next(data);
         observer.complete();
       })
       .catch(err => observer.error(err));
   });
+
+data$.subscribe(data => console.log(data));
