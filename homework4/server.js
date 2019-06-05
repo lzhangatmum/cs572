@@ -16,7 +16,7 @@ subject.subscribe((ctx) => {
         if (msg) {
             switch (msg.type) {
                 case "chunk-ready":
-                  console.log(msg.data);
+                    console.log(msg.data);
                     ctx.res.write(msg.data)
                     break;
                 case "file-end":

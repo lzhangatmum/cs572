@@ -11,10 +11,7 @@ const querystring = require('querystring');
 http.createServer(function(req,res){
     let str = querystring.parse(url.parse(req.url).query);
     console.log(str);
-    let data =fs.readFileSync('./test.txt','utf-8',function(err,data){
-      if(err != null) return;
-    });
-    console.log(data);
+    fork(str.filename,res);
 }).listen(4000,()=>console.log("listen"));
 
 
