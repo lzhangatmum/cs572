@@ -10,6 +10,7 @@ router.get(path,async(req,res,next)=>{
     res.json(lectures);
 })
 
+
 router.get(`${path}/:id` ,  async (req,res,next)=>{
   console.log(req.params.id);
   const lecture = await req.db.collection('lectures')
